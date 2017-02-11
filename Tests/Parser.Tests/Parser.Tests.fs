@@ -1,8 +1,11 @@
-module Parser.Tests
+module StockChartBot.Parser.Tests
 
+open System
 open NUnit.Framework
-open FsUnit
 
-[<Test>]
-let ``Example Test`` () =
-    1 |> should equal 1
+type ``This is a test``() =
+    [<Test>]
+    member this.``my first test works``() =
+        let expected = true
+        let actual = true
+        Assert.AreEqual(expected, actual)
