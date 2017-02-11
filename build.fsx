@@ -2,10 +2,14 @@
 #r "./packages/FAKE/tools/FakeLib.dll"
 
 open Fake
+open Fake.Testing
+
+RestorePackages()
 
 // Directories
 let buildDir  = "./build/"
 let deployDir = "./deploy/"
+let testDir = "./build/"
 
 
 // Filesets
@@ -32,10 +36,19 @@ Target "Deploy" (fun _ ->
     -- "*.zip"
     |> Zip buildDir (deployDir + "ApplicationName." + version + ".zip")
 )
+let tests = !! (testDir + "*.Tests.dll")
+let nunitRunnerPath = "packages/NUnit.ConsoleRunner/tools/nunit3-console.exe"
+
+Target "NUnitTest" (fun _ -> 
+    tests
+    |> NUnit3 (fun p ->  
+        { p with ToolPath = nunitRunnerPath })
+)
 
 // Build order
 "Clean"
   ==> "Build"
+  ==> "NUnitTest"
   ==> "Deploy"
 
 // start build
