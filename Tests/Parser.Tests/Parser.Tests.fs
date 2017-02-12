@@ -17,6 +17,14 @@ type ``Given some valid text``(text, sender, ticker, fm, fd, fy, tm, td, ty) =
                 Ticker = ticker
                 From = DateTime(fy, fm, fd)
                 To = DateTime(ty, tm, td)
-            }
+            } |> Outcome.Success
+        let actual = Parse text
+        Assert.AreEqual(expected, actual)
+
+[<TestFixture("")>]
+type ``Given some invalid text``(text) =
+    [<Test>]
+    member this.``the parser function fails``() =
+        let expected : Outcome<Query> = Outcome.Failure "Invalid text"
         let actual = Parse text
         Assert.AreEqual(expected, actual)

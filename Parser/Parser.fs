@@ -3,6 +3,10 @@ module StockChartBot.Parser
 open System
 open System.Globalization
 
+type Outcome<'S> =
+| Success of result:'S
+| Failure of message:string
+
 type Query =
     {
         Sender : string
@@ -10,7 +14,7 @@ type Query =
         From : DateTime
         To : DateTime
     }
-
+    
 let private parseDate (s : string) =
     DateTime.ParseExact(
         s, 
@@ -21,9 +25,12 @@ let private parseDate (s : string) =
 
 let Parse (text : string) =
     let elements = text.Split([|' '|])
-    {
-        Sender = elements.[0]
-        Ticker = elements.[1]
-        From = elements.[2] |> parseDate
-        To = elements.[3] |> parseDate
-    }
+    match elements with
+    | [|sender; ticker; from; until|] ->
+        {
+            Sender = sender
+            Ticker = ticker
+            From = from |> parseDate
+            To = until |> parseDate
+        } |> Outcome.Success
+    | _ -> Outcome.Failure "Invalid text"
