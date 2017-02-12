@@ -1,0 +1,29 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{f2a71f9b-5d33-465a-a702-920d77279786}") = "StockChartBot", "StockChartBot.fsproj", "{DAA64067-47AA-4FF6-AB09-BC41158DB1C3}"
+EndProject
+Project("{f2a71f9b-5d33-465a-a702-920d77279786}") = "Parser", "..\Parser\Parser.fsproj", "{35DA12A1-A638-4CBF-8604-261D161A7BF5}"
+EndProject
+Project("{f2a71f9b-5d33-465a-a702-920d77279786}") = "Parser.Tests", "..\Tests\Parser.Tests\Parser.Tests.fsproj", "{87BCF3FB-46F8-4848-9D9F-0559482224E3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DAA64067-47AA-4FF6-AB09-BC41158DB1C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAA64067-47AA-4FF6-AB09-BC41158DB1C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAA64067-47AA-4FF6-AB09-BC41158DB1C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAA64067-47AA-4FF6-AB09-BC41158DB1C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35DA12A1-A638-4CBF-8604-261D161A7BF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35DA12A1-A638-4CBF-8604-261D161A7BF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35DA12A1-A638-4CBF-8604-261D161A7BF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35DA12A1-A638-4CBF-8604-261D161A7BF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87BCF3FB-46F8-4848-9D9F-0559482224E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87BCF3FB-46F8-4848-9D9F-0559482224E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87BCF3FB-46F8-4848-9D9F-0559482224E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87BCF3FB-46F8-4848-9D9F-0559482224E3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
