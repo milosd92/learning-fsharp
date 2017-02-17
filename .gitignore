@@ -9,6 +9,7 @@ Debug
 obj
 bin
 deploy
+*.projitems
 
 
 ### Linux ###
