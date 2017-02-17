@@ -9,7 +9,6 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>StockChartBot</RootNamespace>
     <AssemblyName>StockChartBot</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
     <Name>StockChartBot</Name>
