@@ -12,5 +12,5 @@ module Choice =
         Success x
 
     // Convert a single value into a failure two-track result	
-    let fail x =
-        Failure x	
+    let fail x = 
+        Failure x

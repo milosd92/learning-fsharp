@@ -9,6 +9,6 @@
     <Import_RootNamespace>Common</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)MyType.fs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Choice.fs" />
   </ItemGroup>
 </Project>

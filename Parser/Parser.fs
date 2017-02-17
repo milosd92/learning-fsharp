@@ -2,10 +2,7 @@ module StockChartBot.Parser
 
 open System
 open System.Globalization
-
-type Outcome<'S> =
-| Success of result:'S
-| Failure of message:string
+open StockChartBot.Rop
 
 type Query =
     {
@@ -36,9 +33,9 @@ let Parse (text : string) =
                 Ticker = ticker
                 From = from
                 To = until
-            } |> Outcome.Success
+            } |> Choice.succeed
         with
-        | e -> Outcome.Failure "Invalid text" // todo - clarify
+        | _ -> Choice.fail "Could not parse date."
     | [|sender; ticker; from; until|] ->
         try
         {
@@ -46,7 +43,7 @@ let Parse (text : string) =
             Ticker = ticker
             From = from |> parseDate
             To = until |> parseDate
-        } |> Outcome.Success
+        } |> Choice.succeed
         with
-        | e -> Outcome.Failure "Invalid text" // todo - clarify
-    | _ -> Outcome.Failure "Invalid text"
+        | _ -> Choice.fail "Could not parse date."
+    | _ ->  Choice.fail "Could not parse request."
